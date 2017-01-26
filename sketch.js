@@ -5,14 +5,13 @@ function setup() {
   offset = random(windowWidth);
   colorMode(HSB);
   noStroke();
-  var circle = new Circle(.01, random(windowWidth), random(windowHeight),
-    random(1000));
+  var circle = new Circle(.01, windowWidth / 2, windowHeight / 2,
+    random(1000), windowHeight);
   circles.push(circle);
 
 }
 
 function draw() {
-
   for (var i = 0; i < circles.length; i++) {
     circles[i].draw(circles);
 
