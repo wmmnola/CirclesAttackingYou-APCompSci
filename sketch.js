@@ -12,8 +12,10 @@ function setup() {
 }
 
 function draw() {
+
   for (var i = 0; i < circles.length; i++) {
     circles[i].draw(circles);
+
 
   }
 
