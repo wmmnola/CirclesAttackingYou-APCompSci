@@ -1,7 +1,4 @@
-
 var Circle = function(radius, initx, inity, acc, limit, generation) {
-
-
   this.r = radius;
   this.x = initx;
   this.y = inity;
@@ -10,7 +7,6 @@ var Circle = function(radius, initx, inity, acc, limit, generation) {
   this.color = 1;
   this.bright = random(10, 90);
   this.sat = random(10, 90);
-
   if (!limit) {
     this.limit = random(500, 1000);
   } else {
@@ -27,7 +23,6 @@ var Circle = function(radius, initx, inity, acc, limit, generation) {
   this.babycircles = []
 
   this.draw = function(circles) {
-
     if (this.growing) {
       fill(this.color % 120, this.sat % 100, this.bright % 100, 100);
       this.color += this.vel
@@ -37,19 +32,16 @@ var Circle = function(radius, initx, inity, acc, limit, generation) {
         this.r += this.vel;
         pop();
       } else {
-
-        if (!this.reproduced && this.generation <= 6) {
+        if (!this.reproduced && this.generation <= 7) {
           this.explode(circles);
           this.reproduced = true;
         }
-
 
       }
       this.vel += this.acc;
       this.bright += this.acc;
       this.sat += this.acc;
     }
-
     if (this.babycircles) {
       for (var i = 0; i < this.babycircles.length; i++) {
         this.babycircles[i].draw();
