@@ -49,8 +49,7 @@ var Circle = function(radius, initx, inity, acc, limit, generation) {
     }
   }
   this.explode = function() {
-    console.log("EXPLODE")
-    var offset = sin(45) * this.r / 2
+    var offset = sin(45) * this.r / 2;
     var circle1 = new Circle(1, (this.x - offset), this.y - offset, this.acc,
       this.limit / 2, this.generation + 1);
     var circle2 = new Circle(1, this.x + offset, this.y - offset, this.acc,
@@ -59,11 +58,9 @@ var Circle = function(radius, initx, inity, acc, limit, generation) {
       this.limit / 2, this.generation + 1);
     var circle4 = new Circle(1, this.x + offset, this.y + offset, this.acc,
       this.limit / 2, this.generation + 1);
-    console.log(circle1.x);
     this.babycircles.push(circle1);
     this.babycircles.push(circle2);
     this.babycircles.push(circle3);
     this.babycircles.push(circle4);
-    console.log(this.babycircles);
   }
 }
